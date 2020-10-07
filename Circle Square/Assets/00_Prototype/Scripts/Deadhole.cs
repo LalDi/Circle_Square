@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using DG.Tweening;
 
 public class Deadhole : MonoBehaviour
 {
     public float m_Speed = 1;
     public GameObject ReButton;
+    public InputField SpeedField;
 
     private void Start()
     {
@@ -34,5 +36,9 @@ public class Deadhole : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("00_Prototype");
+    }
+    public void SetSpeed()
+    {
+        m_Speed = int.Parse(SpeedField.text);
     }
 }
