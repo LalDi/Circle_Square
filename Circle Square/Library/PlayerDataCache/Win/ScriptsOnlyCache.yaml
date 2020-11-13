@@ -9,7 +9,6 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
-    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -75,33 +74,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11608}
     - Class: 114
-      Script: {instanceID: 12100}
+      Script: {instanceID: 12074}
     - Class: 114
-      Script: {instanceID: 12272}
+      Script: {instanceID: 12102}
     - Class: 114
-      Script: {instanceID: 12626}
+      Script: {instanceID: 12274}
     - Class: 114
-      Script: {instanceID: 12842}
+      Script: {instanceID: 12628}
     - Class: 114
-      Script: {instanceID: 12988}
+      Script: {instanceID: 12844}
     - Class: 114
-      Script: {instanceID: 13064}
+      Script: {instanceID: 12990}
     - Class: 114
-      Script: {instanceID: 13278}
+      Script: {instanceID: 13066}
     - Class: 114
-      Script: {instanceID: 13392}
+      Script: {instanceID: 13280}
     - Class: 114
-      Script: {instanceID: 13754}
+      Script: {instanceID: 13394}
     - Class: 114
-      Script: {instanceID: 14264}
+      Script: {instanceID: 13756}
     - Class: 114
-      Script: {instanceID: 14334}
+      Script: {instanceID: 14266}
     - Class: 114
-      Script: {instanceID: 14366}
+      Script: {instanceID: 14336}
     - Class: 114
-      Script: {instanceID: 14386}
+      Script: {instanceID: 14368}
     - Class: 114
-      Script: {instanceID: 16004}
+      Script: {instanceID: 14388}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -309,6 +308,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: d091383b65206180a49055ccc2637b41
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Manager
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -633,13 +638,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: d091383b65206180a49055ccc2637b41
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Manager
   platform: 5
   scenePathNames:
   - Assets/00_Prototype/00_Prototype.unity
-  playerPath: C:/Users/LalDI/Desktop/Cricle Square Prototype/Circle Square.exe
+  playerPath: C:/Users/LalDI/Desktop/Circle Square/Cricle Square Prototype/Circle
+    Square.exe
