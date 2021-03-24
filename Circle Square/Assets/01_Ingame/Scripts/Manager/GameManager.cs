@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using DG.Tweening;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    public Player Player { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    
+    private void Awake()
     {
-        
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.SetResolution(Screen.width, Screen.width * 16 / 9, true);
+        Application.targetFrameRate = 144;
+
+        Player = GameObject.Find("Player").GetComponent<Player>();
     }
 }

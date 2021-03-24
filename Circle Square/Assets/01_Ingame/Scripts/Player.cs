@@ -5,35 +5,38 @@ using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
-    private float MoveDelay = 0.1f;
-    private float MovePower = 2;
-    private Ease GetEaseMove = Ease.Unset;
+    public float MoveDelay { get; } = 0.1f;
+    public float MovePower { get; } = 2;
+    public Ease EaseMove { get; } = Ease.Unset;
 
     private float JumpDelay = 0.5f;
     private float JumpPower = 3;
-    private Ease GetEaseJump = Ease.OutSine;
+    private Ease EaseJump = Ease.OutSine;
 
-    private bool IsMove = false;
+    public bool IsMove { get; set; } = false;
 
-
-    private IEnumerator Move()
-    {
-        if (!IsMove)
-        {
-            IsMove = true;
-            transform.DOMoveX(transform.position.x + MovePower, MoveDelay).SetEase(GetEaseMove);
-            yield return new WaitForSeconds(MoveDelay);
-            IsMove = false;
-        }
-        yield return 0;
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            transform.DOMoveY(transform.position.y + JumpPower, JumpDelay).SetEase(GetEaseJump);
+            transform.DOMoveY(transform.position.y + JumpPower, JumpDelay).SetEase(EaseJump);
         }
     }
 
+    private IEnumerator Move()
+    {
+        Rigidbody2D rig = GetComponent<Rigidbody2D>();
+
+        if (!IsMove)
+        {
+            IsMove = true;
+            rig.gravityScale = 0;
+            transform.DOMoveX(transform.position.x + MovePower, MoveDelay).SetEase(EaseMove);
+            yield return new WaitForSeconds(MoveDelay);
+            rig.gravityScale = 1;
+            IsMove = false;
+        }
+        yield return 0;
+    }
 }
